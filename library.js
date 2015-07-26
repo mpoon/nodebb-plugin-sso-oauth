@@ -28,8 +28,8 @@
 		async = module.parent.require('async'),
 
 		constants = Object.freeze({
-			type: '',	// Either 'oauth' or 'oauth2'
-			name: '',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
+			type: 'oauth2',	// Either 'oauth' or 'oauth2'
+			name: 'stormpath',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
 			oauth: {
 				requestTokenURL: '',
 				accessTokenURL: '',
@@ -38,12 +38,12 @@
 				consumerSecret: ''
 			},
 			oauth2: {
-				authorizationURL: '',
-				tokenURL: '',
-				clientID: '',
-				clientSecret: ''
+				authorizationURL: 'https://api.stormpath.com/v1/oAuthPolicies/7O4XRuVwrJKHYB4hWmqtgQ',
+				tokenURL: 'https://api.stormpath.com/v1/applications/$YOUR_APPLICATION_ID/oauth/token',
+				clientID: '48HIBJ57SEE0WDPEWAAQDT4PD',
+				clientSecret: 'Kr2M8TGZ7C8Y4mvUd49F2juVqy+hgGplOulpfAzt+wc'
 			},
-			userRoute: ''	// This is the address to your app's "user profile" API endpoint (expects JSON)
+			userRoute: 'https://api.stormpath.com/v1/accounts/'	// This is the address to your app's "user profile" API endpoint (expects JSON)
 		}),
 		configOk = false,
 		OAuth = {}, passportOAuth, opts;
